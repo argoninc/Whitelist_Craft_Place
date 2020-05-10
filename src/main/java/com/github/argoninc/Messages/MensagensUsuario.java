@@ -14,6 +14,10 @@ public class MensagensUsuario {
 	public static void blockPlaceMessageToUser(Player target, String message) {
 		target.sendMessage(ChatColor.DARK_RED + message);
 	}
+	
+	public static void blockInteractMessageToUser(Player target, String message) {
+		target.sendMessage(ChatColor.DARK_RED + message);
+	}
 
 
 }
