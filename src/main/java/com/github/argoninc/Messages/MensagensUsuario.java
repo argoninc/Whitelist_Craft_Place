@@ -1,17 +1,19 @@
 package com.github.argoninc.Messages;
 
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
-public class MensagensUsuario implements CommandExecutor {
+import net.md_5.bungee.api.ChatColor;
+
+public class MensagensUsuario {
 	
 	
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		
-		
-		
-		return false;
+	public static void blockCraftMessageToUser(Player target, String message) {
+		target.sendMessage(ChatColor.DARK_RED + message);
 	}
+	
+	public static void blockPlaceMessageToUser(Player target, String message) {
+		target.sendMessage(ChatColor.DARK_RED + message);
+	}
+
 
 }
