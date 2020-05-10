@@ -1,12 +1,30 @@
 package com.github.argoninc.Listener;
 
+import java.util.ArrayList;
+
 import org.bukkit.Material;
+import org.json.JSONArray;
+
+import com.github.argoninc.Main.Principal;
 
 public class WhitelistBlock {
 	
+	public static Material[] getItems(String typeItem) {
+			
+		JSONArray arrTemp = (JSONArray) Principal.CONFIG.get(typeItem);
+		
+	    ArrayList<Material> materiais = new ArrayList<Material>();
+	    
+		for (int i = 0; i < arrTemp.length(); i++) {
+			materiais.add(Material.getMaterial((String) arrTemp.get(i)));
+		}
+
+		return materiais.toArray(new Material[0]);
+	}
+	
 	public static boolean isValidCraft(Material item) {
 		
-		Material[] proib = {Material.TNT, Material.ENDER_CHEST, Material.FLINT_AND_STEEL};
+		Material[] proib = getItems("craft");
 		
 		for(Material m: proib) {
 			if(item.equals(m)) { 
@@ -19,7 +37,7 @@ public class WhitelistBlock {
 	
 	public static boolean isValidPlace(Material item) {
 		
-		Material[] proib = {Material.TNT, Material.BEDROCK, Material.ENDER_CHEST};
+		Material[] proib = getItems("place");
 		
 		for(Material m: proib) {
 			if(item.equals(m)) { 
@@ -32,7 +50,7 @@ public class WhitelistBlock {
 	
 	public static boolean isValidUse(Material item) {
 		
-		Material[] proib = {Material.FLINT_AND_STEEL, Material.LAVA_BUCKET, Material.WATER_BUCKET};
+		Material[] proib = getItems("use");
 		
 		for(Material m: proib) {
 			if(item.equals(m)) { 

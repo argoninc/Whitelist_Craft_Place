@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.argoninc</groupId>
-	
-	<!--  TROCAR  -->
-	
+
+	<!-- TROCAR -->
+
 	<artifactId>Whitelist_Craft_Place</artifactId>
 	<version>1.0.0</version>
 	<dependencies>
@@ -22,6 +22,17 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.rillis</groupId>
+			<artifactId>configcore</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.rillis</groupId>
+			<artifactId>utils</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
@@ -42,10 +53,10 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
-					
-					
-					<!--  TROCAR  -->
-					
+
+
+					<!-- TROCAR -->
+
 					<outputDirectory>D:\Nerd\Java\Servidor_teste_plugin\plugins</outputDirectory>
 				</configuration>
 				<executions>
