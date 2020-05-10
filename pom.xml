@@ -46,8 +46,7 @@
 					
 					<!--  TROCAR  -->
 					
-					
-					<outputDirectory>D:\Nerd\Java\Whitelist_Craft_Place\output</outputDirectory>
+					<outputDirectory>D:\Nerd\Java\Servidor_teste_plugin\plugins</outputDirectory>
 				</configuration>
 				<executions>
 					<execution>
