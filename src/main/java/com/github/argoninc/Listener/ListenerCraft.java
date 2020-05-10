@@ -18,8 +18,15 @@ public class ListenerCraft implements Listener {
 		//Pega o item que houve a tentativa de crafiting
 		Material item = event.getInventory().getResult().getType();
 		
-		player.sendMessage("*MENSAGEM TESTE* VOCÊ CRAFTOU: " + item);
+		//If para comparar se é um crafting válido 
+		if (WhitelistBlock.isValidCraft(item)) {
+			player.sendMessage("*MENSAGEM TESTE* VOCÊ CRAFTOU: " + item);
 
+		}else {
+			player.sendMessage("*MENSAGEM TESTE* VOCÊ TENTOU CRAFTAR E NÃO FOI: " + item);
+			event.setCancelled(true);
+		}
+		
 	}
 
 }
